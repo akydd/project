@@ -1,4 +1,8 @@
 Project::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/search"
+
   resources :notes
 
   resources :contacts

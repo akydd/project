@@ -7,7 +7,15 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 
-gem 'therubyracer'
+# for testing
+group :development do
+	gem 'rspec-rails'
+end
+
+group :testing do
+	gem 'rspec-rails'
+	gem 'webrat'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -16,7 +24,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
+  gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
