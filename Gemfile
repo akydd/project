@@ -19,6 +19,9 @@ group :testing do
 	gem 'rspec-rails'
 	gem 'webrat'
 	gem 'factory_girl_rails'
+	# ruby-debug doesn't work with ruby 1.9.3p125
+	#gem 'ruby-debug19'
+	#gem 'ruby-debug-base19', '0.11.26'
 end
 
 # Gems used only for assets and not required

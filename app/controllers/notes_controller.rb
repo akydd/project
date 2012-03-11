@@ -24,9 +24,8 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.json
   def new
-    @contact = Contact.find(params[:contact_id])
     @note = Note.new
-    @note.contact = @contact
+    @contact = Contact.find(params[:contact_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,8 +41,8 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(params[:note])
-    @contact = @note.contact
+    @contact = Contact.find(params[:contact_id])
+    @note = @contact.notes.build(params[:note])
 
     # show contact on successful save
     respond_to do |format|
