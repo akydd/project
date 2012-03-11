@@ -21,5 +21,21 @@ describe Contact do
 		no_last_name_contact = Contact.new(@attr.merge(:last_name => ""))
 		no_last_name_contact.should_not be_valid
 	end
+
+	describe "helper contact model methods" do
+
+		before(:each) do
+			@contact = Contact.create!(@attr)
+		end
+		
+		it "should have a name method" do
+			@contact.should respond_to(:name)
+		end
+
+		it "should combine both names into one" do
+			@contact.name.should == @attr[:first_name] + " " +
+				@attr[:last_name]
+		end
+	end
 end
 

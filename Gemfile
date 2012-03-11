@@ -7,15 +7,17 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 
-# for testing
+# for dev 
 group :development do
 	gem 'rspec-rails'
 	gem 'annotate', '~> 2.4.1.beta'
 end
 
+# for testing
 group :testing do
 	gem 'rspec-rails'
 	gem 'webrat'
+	gem 'factory_girl_rails'
 end
 
 # Gems used only for assets and not required

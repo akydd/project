@@ -1,19 +1,8 @@
+<h1><%= @contact.name %></h1>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @contact.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @contact.last_name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @contact.email %>
-</p>
+<p><b><%= @contact.email %></b></p>
 
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |

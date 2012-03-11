@@ -12,7 +12,13 @@
 
 class Contact < ActiveRecord::Base
 	attr_accessible :first_name, :last_name, :email
+
 	validates :first_name, :presence => true
 	validates :last_name, :presence => true
+
 	has_many :notes
+
+	def name
+		"#{first_name} #{last_name}"
+	end
 end
