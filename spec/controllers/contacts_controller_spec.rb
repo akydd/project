@@ -31,4 +31,100 @@ describe ContactsController do
 			response.should have_selector("h1", :content => @contact.name)
 		end
 	end
+
+	describe "POST 'create'" do
+		describe "failure" do
+
+			before(:each) do
+				@attr = { :first_name => "",
+					:last_name => "",
+					:email => "" }
+			end
+
+			it "should not create a contact" do
+				lambda do
+					post :create, :contact => @attr
+				end.should_not change(Contact, :count)
+			end
+
+			it "should render the 'new' page" do
+				post :create, :user => @attr
+				response.should render_template('new')
+			end
+		end
+
+		describe "success" do
+			before(:each) do
+				@attr = { :first_name => "New",
+					:last_name => "Contact",
+					:email => "new@contact.org" }
+			end
+
+			it "should create a new contact" do
+				lambda do
+					post :create, :contact => @attr
+				end.should change(Contact, :count).by(1)
+			end
+
+			it "should redirect to the contact show page" do
+				post :create, :contact => @attr
+				response.should redirect_to(contact_path(assigns(:contact)))
+			end
+		end
+	end
+
+	describe "GET 'edit'" do
+
+		before(:each) do
+			@contact = Factory(:contact)
+		end
+
+		it "should be successful" do
+			get :edit, :id => @contact
+			response.should be_success
+		end
+	end
+
+	describe "PUT 'update'" do
+
+		before(:each) do
+			@contact = Factory(:contact)
+		end
+
+		describe "failure" do
+
+			before(:each) do
+				@attr = { :first_name => "",
+					:last_name => "",
+					:email => "" }
+			end
+
+			it "should render the 'edit' page" do
+				put :update, :id => @contact, :contact => @attr
+				response.should render_template('edit')
+			end
+		end
+
+		describe "success" do
+
+			before(:each) do
+				@attr = { :first_name => "Test",
+					:last_name => "Contact",
+					:email => "new@email" }
+			end
+
+			it "should change the contact's data" do
+				put :update, :id => @contact, :contact => @attr
+				@contact.reload
+				@contact.first_name.should == @attr[:first_name]
+				@contact.last_name.should == @attr[:last_name]
+				@contact.email.should == @attr[:email]
+			end
+
+			it "should redirect to the contact show page" do
+				put :update, :id => @contact, :contact => @attr
+				response.should redirect_to(contact_path(@contact))
+			end
+		end
+	end
 end

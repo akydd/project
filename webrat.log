@@ -1,0 +1,3 @@
+# Logfile created on 2012-03-10 18:13:35 -0700 by logger.rb/31641
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"", "last_name"=>"", "email"=>""}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}

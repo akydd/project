@@ -24,7 +24,6 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   # GET /contacts/new.json
   def new
-    @title = "New contact"
     @contact = Contact.new
 
     respond_to do |format|
@@ -72,13 +71,14 @@ class ContactsController < ApplicationController
 
   # DELETE /contacts/1
   # DELETE /contacts/1.json
-  def destroy
-    @contact = Contact.find(params[:id])
-    @contact.destroy
+  # def destroy
+  #  @contact = Contact.find(params[:id])
+  #  @contact.destroy
+  #
+  #  respond_to do |format|
+  #    format.html { redirect_to contacts_url }
+  #    format.json { head :no_content }
+  #  end
+  #end
 
-    respond_to do |format|
-      format.html { redirect_to contacts_url }
-      format.json { head :no_content }
-    end
-  end
 end
