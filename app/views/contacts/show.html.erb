@@ -4,6 +4,13 @@
 
 <p><b><%= @contact.email %></b></p>
 
+<p><%= link_to 'Add Note', new_note_path(:contact_id => @contact.id)%></p>
+
+<% unless @contact.notes.empty? %>
+	<table class="notes">
+		<%= render @notes %>
+	</table>
+<% end %>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>

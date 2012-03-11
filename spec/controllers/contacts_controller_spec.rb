@@ -30,6 +30,20 @@ describe ContactsController do
 			get 'show', :id => @contact
 			response.should have_selector("h1", :content => @contact.name)
 		end
+
+		it "should show the contact's notes" do
+			n1 = Factory(:note, :contact => @contact,
+				     :title => "Foo bar",
+				     :content => "Nice note!")
+			n2 = Factory(:note, :contact => @contact,
+				     :title => "Baz quux",
+				     :content => "Nicer note!")
+			get :show, :id => @contact
+			response.should have_selector("td",
+						      :content => n1.content)
+			response.should have_selector("td",
+						      :content => n2.content)
+		end
 	end
 
 	describe "POST 'create'" do

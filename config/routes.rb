@@ -1,10 +1,10 @@
 Project::Application.routes.draw do
 	match '/search', :to => 'pages#search'
+
 	root :to => 'pages#home'
 	
-  	resources :notes
-
-	resources :contacts
+  	resources :notes, :only => [:new, :create]
+	resources :contacts, :only => [:new, :create, :edit, :update, :show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

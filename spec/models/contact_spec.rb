@@ -37,5 +37,22 @@ describe Contact do
 				@attr[:last_name]
 		end
 	end
+
+	describe "note  associations" do
+
+		before(:each) do
+			@contact = Contact.create(@attr)
+			@note1= Factory(:note, :contact => @contact, :created_at => 1.day.ago)
+			@note2 = Factory(:note, :contact => @contact, :created_at => 1.hour.ago)
+		end
+
+		it "should have a notes attribute" do
+			@contact.should respond_to(:notes)
+		end
+
+		it "should have the right notes in the right order" do
+			@contact.notes.should == [@note2, @note1]
+		end
+	end
 end
 

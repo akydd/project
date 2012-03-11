@@ -13,5 +13,12 @@ namespace :db do
 					:last_name => last_name,
 					:email => email)
 		end
+
+		20.times do
+			Contact.all(:limit => 6).each do |contact|
+				contact.notes.create!(:title => Faker::Lorem.sentence(4),
+						      :content => Faker::Lorem.paragraph)
+			end
+		end
 	end
 end

@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1.json
   def show
     @contact = Contact.find(params[:id])
+    @notes = @contact.notes
 
     respond_to do |format|
       format.html # show.html.erb

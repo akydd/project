@@ -24,7 +24,9 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.json
   def new
+    @contact = Contact.find(params[:contact_id])
     @note = Note.new
+    @note.contact = @contact
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,10 +43,12 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
+    @contact = @note.contact
 
+    # show contact on successful save
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to @contact, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }

@@ -11,5 +11,8 @@
 #
 
 class Note < ActiveRecord::Base
+	attr_accessible :title, :content, :contact_id
 	belongs_to :contact
+	validates :contact_id, :presence => true
+	default_scope :order => 'notes.created_at DESC'
 end

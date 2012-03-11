@@ -1,0 +1,10 @@
+<tr>
+	<td>
+		<b><%= note.title %></b>, posted <%= time_ago_in_words(note.created_at) %> ago
+	</td>
+</tr>
+<tr>
+	<td>
+		<%= note.content %>
+	</td>
+</tr>
