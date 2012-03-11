@@ -48,3 +48,21 @@ REQUESTING PAGE: POST /contacts/1/notes with {"utf8"=>"✓", "note"=>{"title"=>"
 REQUESTING PAGE: GET http://www.example.com/contacts/1 with {} and HTTP headers {"HTTP_REFERER"=>"/contacts/1/notes"}
 REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
 REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"", "last_name"=>"", "email"=>""}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"", "last_name"=>"", "email"=>""}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"", "last_name"=>"", "email"=>""}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"HEY", "last_name"=>"YA", "email"=>"hey@ya.org"}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET http://www.example.com/contacts/1 with {} and HTTP headers {"HTTP_REFERER"=>"/contacts"}
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"", "last_name"=>"", "email"=>""}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET /contacts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts with {"utf8"=>"✓", "contact"=>{"first_name"=>"HEY", "last_name"=>"YA", "email"=>"hey@ya.org"}, "commit"=>"Create Contact"} and HTTP headers {"HTTP_REFERER"=>"/contacts/new"}
+REQUESTING PAGE: GET http://www.example.com/contacts/1 with {} and HTTP headers {"HTTP_REFERER"=>"/contacts"}
+REQUESTING PAGE: GET /contacts/1/notes/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts/1/notes with {"utf8"=>"✓", "note"=>{"title"=>"title", "content"=>"note contents"}, "commit"=>"Create Note"} and HTTP headers {"HTTP_REFERER"=>"/contacts/1/notes/new"}
+REQUESTING PAGE: GET http://www.example.com/contacts/1 with {} and HTTP headers {"HTTP_REFERER"=>"/contacts/1/notes"}
+REQUESTING PAGE: GET /contacts/1/notes/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /contacts/1/notes with {"utf8"=>"✓", "note"=>{"title"=>"title", "content"=>"note contents"}, "commit"=>"Create Note"} and HTTP headers {"HTTP_REFERER"=>"/contacts/1/notes/new"}
+REQUESTING PAGE: GET http://www.example.com/contacts/1 with {} and HTTP headers {"HTTP_REFERER"=>"/contacts/1/notes"}
