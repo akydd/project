@@ -3,6 +3,13 @@ require 'spec_helper'
 describe ContactsController do
 	render_views
 
+	describe "GET 'index'" do
+		it "should eb successful" do
+			get 'index'
+			response.should be_success
+		end
+	end
+
 	describe "GET 'new'" do
 		it "should be successful" do
 			get 'new'

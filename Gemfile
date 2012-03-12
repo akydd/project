@@ -7,6 +7,9 @@ gem 'rails', '3.2.2'
 
 gem 'sqlite3'
 
+# for searching, use the latest
+gem "ransack", :git => "git://github.com/ernie/ransack.git"
+
 # for dev 
 group :development do
 	gem 'rspec-rails'

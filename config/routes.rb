@@ -1,9 +1,7 @@
 Project::Application.routes.draw do
-	match '/search', :to => 'pages#search'
-
 	root :to => 'pages#home'
 
-	resources :contacts, :only => [:new, :create, :edit, :update]
+	resources :contacts, :only => [:index, :new, :create, :edit, :update]
 	resources :contacts, :only => [:show] do
 		resources :notes, :only => [:new, :create]
 	end

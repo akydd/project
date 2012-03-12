@@ -14,15 +14,4 @@ describe PagesController do
     end
   end
 
-  describe "GET 'search'" do
-    it "returns http success" do
-      get 'search'
-      response.should be_success
-    end
-    it "should have the right title" do
-	    get 'search'
-	    response.should have_selector("title", :content => "Search Contacts")
-    end
-  end
-
 end

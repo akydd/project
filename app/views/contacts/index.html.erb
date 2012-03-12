@@ -1,25 +1,32 @@
-<h1>Listing contacts</h1>
+<h1>Search Contacts</h1>
 
+<%= search_form_for @search do |f| %>
+	<p>
+		<%= f.label :first_name_cont %>
+		<%= f.text_field :first_name_cont %><br />
+		<%= f.label :last_name_cont %>
+		<%= f.text_field :last_name_cont %><br />
+		<%= f.label :email_cont %>
+		<%= f.text_field :email_cont %>
+	</p>
+	<p><%= f.submit "Search" %></p>
+<% end %>
+
+<p>Sort by:
+	<%= sort_link @search, :last_name %> |
+	<%= sort_link @search, :first_name %> |
+	<%= sort_link @search, :email %>
+</p>
 <table>
   <tr>
-    <th>First name</th>
-    <th>Last name</th>
+    <th>Name</th>
     <th>Email</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
-<% @contacts.each do |contact| %>
-  <tr>
-    <td><%= contact.first_name %></td>
-    <td><%= contact.last_name %></td>
-    <td><%= contact.email %></td>
-    <td><%= link_to 'Show', contact %></td>
-    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-  </tr>
-<% end %>
+  <%= render @contacts %>
 </table>
 
 <br />
-
-<%= link_to 'New Contact', new_contact_path %>

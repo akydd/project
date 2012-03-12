@@ -7,6 +7,7 @@
 <p><%= link_to 'Add Note', new_contact_note_path(@contact)%></p>
 
 <% unless @contact.notes.empty? %>
+	<p>Sort by <%= sort_link @search, :created_at %></p>
 	<table class="notes">
 		<%= render @notes %>
 	</table>

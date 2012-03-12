@@ -2,7 +2,8 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+	@search = Contact.search(params[:q])
+	@contacts = @search.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +15,16 @@ class ContactsController < ApplicationController
   # GET /contacts/1.json
   def show
     @contact = Contact.find(params[:id])
-    @notes = @contact.notes
+    # need to get sortable notes, so call search
+    @search = @contact.notes.search(params[:q])
+
+    # if no search params were passed (ie for sorting),
+    # sort by created_at DESC
+    if params[:q].nil?
+	    @notes = @search.result(:distinct => true).order('created_at DESC')
+    else 
+	    @notes = @search.result(:distinct => true)
+    end
 
     respond_to do |format|
       format.html # show.html.erb

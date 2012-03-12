@@ -50,9 +50,10 @@ describe Contact do
 			@contact.should respond_to(:notes)
 		end
 
-		it "should have the right notes in the right order" do
-			@contact.notes.should == [@note2, @note1]
-		end
+		# note ordering is handled @ controller level now
+		#it "should have the right notes in the right order" do
+		#	@contact.notes.should == [@note2, @note1]
+		#end
 	end
 end
 
